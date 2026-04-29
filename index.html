@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ελπίδα Ταλαμάγκα | Ψυχολόγος - Ψυχοθεραπεύτρια</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                beige: '#EED3C2',
+                coral: '#F28C5A',
+                pink: '#E46A6A',
+                rose: '#B84A5A',
+                red: '#D65A5A',
+                teal: '#6FAFB0',
+                charcoal: '#2B2B2B',
+                cream: '#FFF0EB',
+              }
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Manrope"', 'sans-serif'],
+            },
+            backgroundImage: {
+              'soft-gradient': 'linear-gradient(135deg, #FFF0EB 0%, #EED3C2 100%)',
+              'mesh': 'radial-gradient(at 40% 20%, rgba(242, 140, 90, 0.25) 0px, transparent 50%), radial-gradient(at 80% 0%, rgba(111, 175, 176, 0.2) 0px, transparent 50%), radial-gradient(at 0% 50%, rgba(214, 90, 90, 0.15) 0px, transparent 50%), radial-gradient(at 80% 80%, rgba(242, 140, 90, 0.2) 0px, transparent 50%)',
+            },
+            animation: {
+              'fade-up': 'fadeUp 1s ease-out forwards',
+              'fade-in': 'fadeIn 1.2s ease-out forwards',
+              'blob': 'blob 7s infinite',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #FFF0EB;
+        color: #2B2B2B;
+        font-family: 'Manrope', sans-serif;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #FFF0EB; }
+      ::-webkit-scrollbar-thumb { background: #D65A5A; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #B84A5A; }
+      
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .text-balance { text-wrap: balance; }
+      .animation-delay-2000 { animation-delay: 2s; }
+      .animation-delay-4000 { animation-delay: 4s; }
+    </style>
+  </head>
+  <body class="w-full min-h-screen bg-brand-cream bg-mesh selection:bg-brand-coral selection:text-white">
+
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6">
+      <div class="container mx-auto px-6 md:px-12">
+        <div id="nav-glass" class="glass-panel rounded-full px-6 md:px-10 py-3 md:py-4 flex items-center justify-between transition-all duration-300 bg-[#f9e5d8]/70 border-transparent">
+          
+          <div class="flex items-center gap-6">
+            <a href="#" class="flex items-center group">
+              <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6974e34059a77bb85cb768ef.png" alt="Logo" class="hidden md:block md:h-24 lg:h-32 w-auto object-contain rounded-full hover:scale-105 transition-transform duration-300" />
+            </a>
+            
+            <a href="https://www.instagram.com/elpida_talamagka/" target="_blank" rel="noopener noreferrer" class="text-brand-charcoal/70 hover:text-brand-red transition-colors p-1" aria-label="Instagram">
+              <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/instagram-logo-instagram-icon-transparent-free-png.png.webp" class="w-5 h-5 object-contain" alt="Instagram">
+            </a>
+          </div>
+
+          <nav class="hidden md:flex items-center gap-8">
+            <a href="#hero" class="text-sm font-medium text-brand-charcoal/80 hover:text-brand-red transition-colors tracking-wide relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-brand-red after:transition-all hover:after:w-full">Αρχική</a>
+            <a href="#bio" class="text-sm font-medium text-brand-charcoal/80 hover:text-brand-red transition-colors tracking-wide relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-brand-red after:transition-all hover:after:w-full">Βιογραφικό</a>
+            <a href="#services" class="text-sm font-medium text-brand-charcoal/80 hover:text-brand-red transition-colors tracking-wide relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-brand-red after:transition-all hover:after:w-full">Υπηρεσίες</a>
+            <a href="#office" class="text-sm font-medium text-brand-charcoal/80 hover:text-brand-red transition-colors tracking-wide relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-brand-red after:transition-all hover:after:w-full">Ο Χώρος</a>
+            <a href="#footer" class="text-sm font-medium text-brand-charcoal/80 hover:text-brand-red transition-colors tracking-wide relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-brand-red after:transition-all hover:after:w-full">Επικοινωνία</a>
+            <a href="https://www.doctoranytime.gr/d/Psychologos/talamagka-elpida" target="_blank" rel="noopener noreferrer" class="bg-brand-red text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-rose transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Κλείστε Ραντεβού</a>
+          </nav>
+
+          <button id="mobile-menu-btn" class="md:hidden text-brand-charcoal p-1 ml-auto">
+            <i data-lucide="menu" class="w-7 h-7"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobile-menu" class="fixed inset-0 z-40 bg-brand-cream/95 backdrop-blur-xl transition-transform duration-500 ease-in-out -translate-y-full md:hidden flex flex-col items-center justify-center gap-8">
+        <button id="close-mobile-menu" class="absolute top-8 right-8 text-brand-charcoal p-2">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <a href="#hero" class="mobile-link font-serif text-2xl text-brand-charcoal hover:text-brand-red">Αρχική</a>
+        <a href="#bio" class="mobile-link font-serif text-2xl text-brand-charcoal hover:text-brand-red">Βιογραφικό</a>
+        <a href="#services" class="mobile-link font-serif text-2xl text-brand-charcoal hover:text-brand-red">Υπηρεσίες</a>
+        <a href="#office" class="mobile-link font-serif text-2xl text-brand-charcoal hover:text-brand-red">Ο Χώρος</a>
+        <a href="#footer" class="mobile-link font-serif text-2xl text-brand-charcoal hover:text-brand-red">Επικοινωνία</a>
+        <a href="https://www.doctoranytime.gr/d/Psychologos/talamagka-elpida" class="mt-4 bg-brand-red text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg">Κλείστε Ραντεβού</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="relative min-h-screen flex items-center justify-center pt-32 pb-16 overflow-hidden bg-brand-cream/50">
+        <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+          <div class="absolute top-0 right-[-10%] w-[40rem] h-[40rem] bg-brand-coral/30 rounded-full mix-blend-multiply filter blur-[80px] animate-blob opacity-80"></div>
+          <div class="absolute bottom-[-10%] left-[-10%] w-[45rem] h-[45rem] bg-brand-teal/25 rounded-full mix-blend-multiply filter blur-[80px] animate-blob animation-delay-2000 opacity-80"></div>
+          <div class="absolute top-[10%] left-[20%] w-[35rem] h-[35rem] bg-brand-rose/25 rounded-full mix-blend-multiply filter blur-[80px] animate-blob animation-delay-4000 opacity-70"></div>
+          <div class="absolute inset-0 bg-white/10 backdrop-blur-[2px]"></div>
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+          
+          <div class="md:hidden flex justify-center mb-8 animate-fade-in">
+             <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6974e34059a77bb85cb768ef.png" alt="Logo" class="h-40 w-auto object-contain shadow-md" />
+          </div>
+
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            
+            <div class="order-2 lg:order-1 flex flex-col gap-6 lg:gap-8 animate-fade-up">
+              <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/70 border border-brand-red/10 w-fit backdrop-blur-md shadow-sm hover:shadow-md transition-all duration-300">
+                <span class="relative flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-red opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-red"></span>
+                </span>
+                <span class="text-xs font-bold uppercase tracking-widest text-brand-charcoal/80">Ψυχοθεραπεία & Συμβουλευτική</span>
+              </div>
+
+              <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] text-brand-charcoal text-balance drop-shadow-sm">
+                Μαζί, φωτίζουμε το μονοπάτι της <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-rose italic pr-2">ψυχικής σας ευεξίας</span>.
+              </h1>
+
+              <p class="font-sans text-lg md:text-xl text-brand-charcoal/80 leading-relaxed max-w-lg text-balance">
+                Δεν χρειάζεται να το περνάτε μόνοι σας. Παρέχουμε έναν ασφαλή χώρο ενσυναίσθησης και επιστημονικής στήριξης, για να βρείτε ξανά την ισορροπία σας.
+              </p>
+
+              <div class="flex flex-col sm:flex-row gap-5 pt-4">
+                <a href="https://www.doctoranytime.gr/d/Psychologos/talamagka-elpida" target="_blank" rel="noreferrer" class="group relative px-9 py-4 bg-gradient-to-br from-brand-red to-brand-rose text-white rounded-full overflow-hidden flex items-center justify-center gap-3 shadow-[0_10px_30px_rgba(214,90,90,0.3)] hover:shadow-[0_15px_40px_rgba(214,90,90,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-95">
+                  <span class="relative z-10 font-bold tracking-wide">Κλείστε Συνεδρία</span>
+                  <i data-lucide="arrow-right" class="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform"></i>
+                  <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+                </a>
+                
+                <a href="#bio" class="px-9 py-4 bg-white/40 border border-brand-charcoal/10 text-brand-charcoal rounded-full flex items-center justify-center font-semibold hover:bg-white/80 transition-all shadow-sm hover:shadow-md backdrop-blur-sm">
+                  Γνωρίστε με
+                </a>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2 relative animate-fade-in delay-200 w-full flex justify-center">
+              <div class="relative w-full max-w-2xl aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl ring-1 ring-white/50">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/20 to-transparent z-10 pointer-events-none"></div>
+                <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/697119e715885e011b52d6fb.jpg" alt="Psychological Support Sanctuary" class="w-full h-full object-cover hover:scale-105 transition-transform duration-[3s] ease-out" />
+                
+                <div class="absolute bottom-10 left-10 z-20 bg-brand-coral shadow-2xl px-8 py-6 rounded-2xl max-w-[340px] border-2 border-white/20">
+                  <p class="font-serif text-lg italic text-brand-charcoal leading-snug font-medium">"Προσπαθώντας χωρίς να χάνουμε την ελπίδα μας για ένα καλυτερο αύριο, ερχόμαστε ένα βήμα πιο κοντά στην ευτυχία.."</p>
+                </div>
+              </div>
+              <div class="absolute top-4 -right-4 w-full h-full max-w-2xl border-2 border-brand-red/10 rounded-[3rem] -z-10 translate-x-4 translate-y-4 hidden md:block"></div>
+              <div class="absolute -top-4 -left-4 w-full h-full max-w-2xl border border-brand-teal/20 rounded-[3rem] -z-20 -translate-x-4 -translate-y-4 hidden md:block"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="bio" class="py-24 bg-white/80 backdrop-blur-sm relative">
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="flex flex-col lg:flex-row gap-16 items-center lg:items-start">
+            
+            <div class="w-full lg:w-5/12 flex justify-center lg:justify-start relative lg:mt-32">
+              <div class="relative rounded-t-full rounded-b-[1000px] overflow-hidden border-[8px] border-brand-cream shadow-2xl max-w-lg w-full aspect-[3/4]">
+                  <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/697716a529dcf58df071936c.png" alt="Elpida Talamagka Portrait" class="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700 object-top" />
+                  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-4/5 glass-panel p-4 text-center rounded-2xl shadow-lg border-white/40">
+                      <h3 class="font-serif text-2xl text-brand-charcoal">Ελπίδα Ταλαμάγκα</h3>
+                      <p class="text-brand-red font-medium text-xs uppercase tracking-widest mt-1">Ψυχολόγος - Ψυχοθεραπεύτρια</p>
+                  </div>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-7/12 flex flex-col justify-center gap-8 py-4">
+              <i data-lucide="quote" class="w-12 h-12 text-brand-beige mb-[-1rem]"></i>
+              <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal leading-tight">
+                Η θεραπεία είναι μια πράξη <span class="text-brand-red italic">αγάπης</span> προς τον εαυτό μας.
+              </h2>
+              
+              <div class="prose prose-lg text-brand-charcoal/80 font-sans text-balance">
+                <p>Καλώς ήρθατε! Ονομάζομαι Ελπίδα Ταλαμάγκα και είμαι Ψυχολόγος - Ψυχοθεραπεύτρια με έδρα τον Υμηττό. Η προσέγγισή μου βασίζεται στο Γνωσιακό - Συμπεριφορικό μοντέλο (CBT), μια επιστημονικά τεκμηριωμένη μέθοδο που εστιάζει στο "εδώ και τώρα", βοηθώντας σας να κατανοήσετε και να αλλάξετε τα μοτίβα σκέψης που σας δυσκολεύουν.</p>
+                <br>
+                <p>Με πτυχίο από το Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών και εξειδίκευση στο Κέντρο Εφαρμοσμένης Ψυχοθεραπείας, έχω αφιερώσει την καριέρα μου στην υποστήριξη ανθρώπων που αντιμετωπίζουν άγχος, κρίσεις πανικού, κατάθλιψη και φοβίες.</p>
+                <br>
+                <p>Πέρα από το ιδιωτικό μου γραφείο, για μένα είναι πολύ σημαντικό να προσφέρω τις υπηρεσίες και στα πλαίσια του εθελοντισμού. Ως ψυχολόγος στη ΜΚΟ "Η Αγκαλιά", στέκομαι δίπλα σε εγκύους και νέες μητέρες, παρέχοντας δωρεάν ψυχολογική υποστήριξη και ψυχοεκπαιδευτικά σεμινάρια με θέματα όπως επιλόχειος κατάθλιψη, θηλασμός, μονογονεϊκές οικογένειες, κ.ά. Επιπλέον, έχω εργαστεί στο παρελθόν σε πολλά οικοτροφεία και κέντρα ημέρας, όπως "Ξένιος Ζευς" και ο "Αίολος".</p>
+                <br>
+                <p>Σκοπός μου είναι να δημιουργήσουμε μαζί μια σχέση εμπιστοσύνης, όπου θα νιώσετε ασφάλεια να εξερευνήσετε τον εαυτό σας και να χτίσετε την ψυχική ανθεκτικότητα που σας αξίζει.</p>
+              </div>
+
+              <div class="grid sm:grid-cols-3 gap-6 mt-8">
+                <div class="p-6 bg-brand-cream rounded-2xl hover:bg-brand-beige/50 transition-colors duration-300">
+                  <i data-lucide="brain-circuit" class="w-8 h-8 text-brand-rose mb-4"></i>
+                  <h4 class="font-serif font-bold text-lg mb-2">CBT Προσέγγιση</h4>
+                  <p class="text-sm opacity-80">Επιστημονική μέθοδος για άμεσα αποτελέσματα.</p>
+                </div>
+                <div class="p-6 bg-brand-cream rounded-2xl hover:bg-brand-beige/50 transition-colors duration-300">
+                  <i data-lucide="heart-handshake" class="w-8 h-8 text-brand-coral mb-4"></i>
+                  <h4 class="font-serif font-bold text-lg mb-2">Ενσυναίσθηση</h4>
+                  <p class="text-sm opacity-80">Ένας χώρος αποδοχής, χωρίς κριτική.</p>
+                </div>
+                <div class="p-6 bg-brand-cream rounded-2xl hover:bg-brand-beige/50 transition-colors duration-300">
+                  <i data-lucide="award" class="w-8 h-8 text-brand-teal mb-4"></i>
+                  <h4 class="font-serif font-bold text-lg mb-2">Εξειδίκευση</h4>
+                  <p class="text-sm opacity-80">Πιστοποιημένη γνώση & εμπειρία.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="py-24 relative overflow-hidden bg-white">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-beige/20 rounded-full blur-[100px] opacity-60"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-teal/5 rounded-full blur-[100px] opacity-60"></div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+          <div class="flex flex-col lg:flex-row justify-between items-end mb-16 gap-6">
+            <div class="max-w-3xl text-center lg:text-left w-full lg:w-auto">
+              <span class="text-brand-red font-medium tracking-widest uppercase text-sm">Υπηρεσίες</span>
+              <h2 class="font-serif text-4xl md:text-5xl mt-4 text-brand-charcoal leading-tight">
+                Πώς μπορούμε να <br/><span class="text-brand-rose italic">συνεργαστούμε</span>
+              </h2>
+            </div>
+            <p class="text-brand-charcoal/70 text-lg font-light max-w-md text-center lg:text-right pb-2 w-full lg:w-auto">
+              Κάθε άνθρωπος είναι μοναδικός. Προσαρμόζουμε το θεραπευτικό πλάνο στις δικές σας ανάγκες.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px]">
+              <div>
+                <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                   <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                </div>
+                <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Online συνεδρία γνωριμίας</h3>
+              </div>
+            </div>
+            <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px]">
+              <div>
+                <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                   <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                </div>
+                <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Ατομική Ψυχοθεραπεία (Ενηλίκων)</h3>
+              </div>
+            </div>
+             <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px]">
+                <div>
+                  <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                     <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                  </div>
+                  <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Ψυχοθεραπεία Εφήβων</h3>
+                </div>
+              </div>
+            <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px]">
+              <div>
+                <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                   <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                </div>
+                <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Γνωσιακή - Συμπεριφοριστική (CBT)</h3>
+              </div>
+            </div>
+             <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px]">
+                <div>
+                  <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                     <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                  </div>
+                  <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Συμβουλευτική Ζεύγους</h3>
+                </div>
+              </div>
+             <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px]">
+                <div>
+                  <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                     <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                  </div>
+                  <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Ομαδική Θεραπεία</h3>
+                </div>
+              </div>
+             <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px]">
+                <div>
+                  <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                     <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                  </div>
+                  <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Διαχείριση Άγχους & Πανικού</h3>
+                </div>
+              </div>
+             <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px]">
+                <div>
+                  <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                     <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                  </div>
+                  <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Θεραπεία Κατάθλιψης & OCD</h3>
+                </div>
+              </div>
+             <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px]">
+                <div>
+                  <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                     <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                  </div>
+                  <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Συμβουλευτική Γονέων</h3>
+                </div>
+              </div>
+              <div class="group flex flex-col justify-center p-8 rounded-2xl bg-white border border-brand-charcoal/5 shadow-sm hover:shadow-xl hover:shadow-brand-rose/5 hover:border-brand-red/20 transition-all duration-500 cursor-pointer min-h-[200px] lg:col-start-2">
+                <div>
+                  <div class="w-10 h-10 rounded-full bg-brand-cream flex items-center justify-center mb-6 group-hover:bg-brand-rose group-hover:text-white transition-colors duration-300">
+                     <div class="w-2 h-2 rounded-full bg-brand-red group-hover:bg-white"></div>
+                  </div>
+                  <h3 class="font-serif text-xl md:text-2xl text-brand-charcoal group-hover:text-brand-rose transition-colors leading-snug">Online Συνεδρίες</h3>
+                </div>
+              </div>
+          </div>
+
+          <div class="mt-20 bg-brand-charcoal text-brand-cream rounded-[2rem] p-12 relative overflow-hidden text-center lg:text-left flex flex-col lg:flex-row items-center justify-between gap-8">
+             <div class="relative z-10">
+                <h3 class="font-serif text-3xl mb-2">Είστε έτοιμοι να κάνετε την αρχή;</h3>
+                <p class="text-brand-cream/60">Οι συνεδρίες έχουν συνήθως διάρκεια 50 λεπτών.</p>
+             </div>
+             <a href="https://www.doctoranytime.gr/d/Psychologos/talamagka-elpida" target="_blank" rel="noopener noreferrer" class="relative z-10 px-8 py-4 bg-brand-cream text-brand-charcoal rounded-full font-bold hover:bg-white transition-colors shadow-lg whitespace-nowrap">
+               Κλείστε Ραντεβού
+             </a>
+             <div class="absolute top-0 right-0 w-64 h-64 bg-brand-red/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 relative">
+        <div class="container mx-auto px-6 md:px-12">
+          <div class="text-center mb-12">
+             <span class="text-brand-red font-medium tracking-widest uppercase text-xs mb-2 block">ΓΙΑΤΙ ΝΑ ΜΕ ΕΠΙΛΕΞΕΤΕ</span>
+             <h3 class="font-serif text-3xl md:text-4xl text-brand-charcoal">
+               Αριθμοί που <span class="text-brand-coral">Εμπνέουν Εμπιστοσύνη</span>
+             </h3>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white/40 backdrop-blur-md border border-white/50 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl hover:bg-white/60 transition-all duration-300">
+              <div class="font-serif text-4xl md:text-5xl text-brand-red mb-2 font-medium">50+</div>
+              <div class="text-brand-charcoal font-bold text-lg mb-1">Ασθενείς</div>
+              <div class="text-brand-charcoal/60 text-sm font-sans">έχουν εμπιστευτεί τη διαδρομή τους</div>
+            </div>
+            <div class="bg-white/40 backdrop-blur-md border border-white/50 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl hover:bg-white/60 transition-all duration-300">
+              <div class="font-serif text-4xl md:text-5xl text-brand-red mb-2 font-medium">10+</div>
+              <div class="text-brand-charcoal font-bold text-lg mb-1">Χρόνια</div>
+              <div class="text-brand-charcoal/60 text-sm font-sans">κλινικής εμπειρίας</div>
+            </div>
+            <div class="bg-white/40 backdrop-blur-md border border-white/50 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl hover:bg-white/60 transition-all duration-300">
+              <div class="font-serif text-4xl md:text-5xl text-brand-red mb-2 font-medium">100%</div>
+              <div class="text-brand-charcoal font-bold text-lg mb-1">Ικανοποίηση</div>
+              <div class="text-brand-charcoal/60 text-sm font-sans">θεραπευόμενων</div>
+            </div>
+            <div class="bg-white/40 backdrop-blur-md border border-white/50 rounded-3xl p-8 text-center shadow-lg hover:shadow-xl hover:bg-white/60 transition-all duration-300">
+              <div class="font-serif text-4xl md:text-5xl text-brand-red mb-2 font-medium">100+</div>
+              <div class="text-brand-charcoal font-bold text-lg mb-1">Συνεδρίες</div>
+              <div class="text-brand-charcoal/60 text-sm font-sans">ατομικές & ομαδικές</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="office" class="py-24 bg-brand-cream relative overflow-hidden">
+        <div class="absolute inset-0 bg-mesh opacity-30 pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 md:px-12 relative z-10">
+          <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
+            
+            <div class="order-2 lg:order-1">
+              <span class="text-brand-red font-medium tracking-widest uppercase text-sm mb-3 block">ΠΕΡΙΒΑΛΛΟΝ</span>
+              <h2 class="font-serif text-4xl md:text-5xl text-brand-charcoal mb-8">Ο Χώρος Μας</h2>
+              <p class="text-lg text-brand-charcoal/80 mb-8 font-sans leading-relaxed text-balance">
+                Ένας προσεκτικά διαμορφωμένος χώρος στον Υμηττό (όρια με Βύρωνα), σχεδιασμένος για να προσφέρει ηρεμία, ιδιωτικότητα και ασφάλεια. Εδώ, ο χρόνος σταματά για λίγο, επιτρέποντάς σας να εστιάσετε σε αυτό που έχει πραγματικά σημασία: εσάς.
+              </p>
+
+              <div class="space-y-6">
+                <div class="flex items-start gap-4 p-4 bg-white/60 rounded-2xl hover:bg-white/80 transition-colors border border-white">
+                  <div class="p-3 bg-white rounded-full text-brand-coral shadow-sm shrink-0">
+                    <i data-lucide="clock" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-serif font-bold text-brand-charcoal text-lg">Ωράριο Λειτουργίας</h4>
+                    <p class="text-brand-charcoal/70">Δευτέρα - Παρασκευή</p>
+                    <p class="text-brand-charcoal/70 italic text-sm">Κατόπιν ραντεβού</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4 p-4 bg-white/60 rounded-2xl hover:bg-white/80 transition-colors border border-white">
+                  <a href="https://share.google/zsm4ZsxEweMlcPrVR" target="_blank" rel="noreferrer" class="p-3 bg-white rounded-full text-brand-teal shadow-sm shrink-0 hover:scale-110 transition-transform">
+                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                  </a>
+                  <div>
+                    <h4 class="font-serif font-bold text-brand-charcoal text-lg">Τοποθεσία</h4>
+                    <p class="text-brand-charcoal/70">Βλαχερνών 10, Υμηττός, 17237, Αττικής</p>
+                    <a href="https://share.google/zsm4ZsxEweMlcPrVR" target="_blank" rel="noreferrer" class="text-brand-rose text-sm font-semibold hover:underline mt-1 inline-block">Οδηγίες Χάρτη &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2 relative w-full">
+               <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl w-full aspect-video border-4 border-white">
+                  <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/697119e76fb151bbd5e952a0.jpg" alt="Main Consultation Room" class="w-full h-full object-cover" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/30 to-transparent"></div>
+               </div>
+               <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-beige/50 rounded-full blur-2xl -z-10"></div>
+            </div>
+          </div>
+
+          <div class="mt-16">
+             <div class="mb-10 flex items-center gap-4 justify-center">
+                <div class="h-[1px] bg-brand-charcoal/10 w-12 md:w-24"></div>
+                <span class="text-xs font-semibold text-brand-charcoal/40 uppercase tracking-widest">Φωτογραφίες</span>
+                <div class="h-[1px] bg-brand-charcoal/10 w-12 md:w-24"></div>
+             </div>
+             
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] border border-white/50 hover:shadow-xl transition-all duration-500">
+                  <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/697119e7eb392bdc6e5a12b0.jpg" alt="Office Space 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-brand-charcoal/0 group-hover:bg-brand-charcoal/5 transition-colors duration-300"></div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] border border-white/50 hover:shadow-xl transition-all duration-500">
+                  <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/697119e7bfff2420d0b9f466.jpg" alt="Office Space 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-brand-charcoal/0 group-hover:bg-brand-charcoal/5 transition-colors duration-300"></div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] border border-white/50 hover:shadow-xl transition-all duration-500">
+                  <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/697119e7fc6c326d9b1a2b7a.jpg" alt="Office Space 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-brand-charcoal/0 group-hover:bg-brand-charcoal/5 transition-colors duration-300"></div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] border border-white/50 hover:shadow-xl transition-all duration-500">
+                  <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/697119e715885ed4d752d6f9.jpg" alt="Office Space 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-brand-charcoal/0 group-hover:bg-brand-charcoal/5 transition-colors duration-300"></div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] border border-white/50 hover:shadow-xl transition-all duration-500">
+                  <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/697119e715885e36dc52d6fa.jpg" alt="Office Space 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-brand-charcoal/0 group-hover:bg-brand-charcoal/5 transition-colors duration-300"></div>
+                </div>
+                <div class="group relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] border border-white/50 hover:shadow-xl transition-all duration-500">
+                  <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/697119e7fc6c326d1b1a2b79.jpg" alt="Office Space 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div class="absolute inset-0 bg-brand-charcoal/0 group-hover:bg-brand-charcoal/5 transition-colors duration-300"></div>
+                </div>
+             </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="bg-white border-t border-brand-beige/50 pt-16 pb-8">
+      <div class="container mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-12">
+          
+          <div class="flex flex-col items-center md:items-start text-center md:text-left">
+            <div class="mb-4">
+                <img src="https://assets.cdn.filesafe.space/61icdoMiJ2pHklO6mmKW/media/6974e34059a77bb85cb768ef.png" alt="Logo" class="h-28 w-auto object-contain rounded-full" />
+            </div>
+            <h3 class="font-serif text-2xl font-bold text-brand-charcoal">Ελπίδα Ταλαμάγκα</h3>
+            <p class="text-brand-charcoal/60 mt-2">Ψυχολόγος - Ψυχοθεραπεύτρια</p>
+          </div>
+
+          <div class="flex gap-8">
+            <a href="tel:6932766839" class="flex flex-col items-center gap-2 text-brand-charcoal hover:text-brand-red transition-colors group">
+              <div class="p-4 bg-brand-cream rounded-full group-hover:bg-brand-beige transition-colors">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+              </div>
+              <span class="text-sm font-medium">693 2766839</span>
+            </a>
+            <a href="https://www.instagram.com/elpida_talamagka/" target="_blank" rel="noreferrer" class="flex flex-col items-center gap-2 text-brand-charcoal hover:text-brand-red transition-colors group">
+              <div class="p-4 bg-brand-cream rounded-full group-hover:bg-brand-beige transition-colors">
+                <img src="https://raw.githubusercontent.com/agelmet/Image-hosting-/refs/heads/main/instagram-logo-instagram-icon-transparent-free-png.png.webp" class="w-6 h-6 object-contain" alt="Instagram">
+              </div>
+              <span class="text-sm font-medium">Instagram</span>
+            </a>
+
+             <a href="https://www.tiktok.com/@user71234785586110?_r=1&_t=ZN-93Ko9OuswsA" target="_blank" rel="noreferrer" class="flex flex-col items-center gap-2 text-brand-charcoal hover:text-brand-red transition-colors group">
+              <div class="p-4 bg-brand-cream rounded-full group-hover:bg-brand-beige transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                </svg>
+              </div>
+              <span class="text-sm font-medium">TikTok</span>
+            </a>
+
+            <a href="mailto:info@example.com" class="flex flex-col items-center gap-2 text-brand-charcoal hover:text-brand-red transition-colors group">
+              <div class="p-4 bg-brand-cream rounded-full group-hover:bg-brand-beige transition-colors">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+              </div>
+              <span class="text-sm font-medium">Email</span>
+            </a>
+          </div>
+        </div>
+        <div class="mt-16 pt-8 border-t border-brand-beige/30 text-center">
+          <p class="text-brand-charcoal/40 text-sm">&copy; <span id="year"></span> Ελπίδα Ταλαμάγκα. All rights reserved. <br/> <span class="text-xs">Designed by Advon Media</span></p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Set Current Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // --- NAVBAR SCROLL LOGIC ---
+      const navbar = document.getElementById('navbar');
+      const navGlass = document.getElementById('nav-glass');
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.remove('py-6');
+          navbar.classList.add('py-4');
+          navGlass.classList.add('shadow-lg', 'bg-[#f9e5d8]/90');
+          navGlass.classList.remove('bg-[#f9e5d8]/70', 'border-transparent');
+        } else {
+          navbar.classList.add('py-6');
+          navbar.classList.remove('py-4');
+          navGlass.classList.remove('shadow-lg', 'bg-[#f9e5d8]/90');
+          navGlass.classList.add('bg-[#f9e5d8]/70', 'border-transparent');
+        }
+      });
+
+      // --- MOBILE MENU LOGIC ---
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      function openMenu() {
+        mobileMenu.classList.remove('-translate-y-full');
+        mobileMenu.classList.add('translate-y-0');
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('translate-y-0');
+        mobileMenu.classList.add('-translate-y-full');
+      }
+
+      mobileMenuBtn.addEventListener('click', openMenu);
+      closeMobileMenuBtn.addEventListener('click', closeMenu);
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+    </script>
+  </body>
+</html>
